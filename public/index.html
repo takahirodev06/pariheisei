@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex">
+    <meta name="googlebot" content="noindex">
+    <meta name="googlebot-news" content="nosnippet">
+    <title>パリヘイセイご意見箱フォーム</title>
+    <script type="text/javascript"
+            src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init({
+                publicKey: "hupchnZbg9mZaDmHZ",
+            });
+        })();
+
+        window.onload = function () {
+            document.getElementById('contact-form').addEventListener('submit', function (event) {
+                event.preventDefault();
+                // these IDs from the previous steps
+                emailjs.sendForm('service_1mo2u0e', 'template_ibm70v8', this)
+                    .then(() => {
+                        window.alert("メッセージが送信されました！ありがとうございました。");
+                        console.log('SUCCESS!');
+                        console.log(this);
+                    }, (error) => {
+                        window.alert("送信エラーが発生しました。");
+                        console.log('FAILED...', error);
+                    });
+            });
+        }
+    </script>
+    <!-- update the version number as needed -->
+    <script defer src="/__/firebase/10.8.1/firebase-app-compat.js"></script>
+    <!-- include only the Firebase features as you need -->
+    <script defer src="/__/firebase/10.8.1/firebase-auth-compat.js"></script>
+    <script defer src="/__/firebase/10.8.1/firebase-database-compat.js"></script>
+    <script defer src="/__/firebase/10.8.1/firebase-firestore-compat.js"></script>
+    <script defer src="/__/firebase/10.8.1/firebase-functions-compat.js"></script>
+    <script defer src="/__/firebase/10.8.1/firebase-messaging-compat.js"></script>
+    <script defer src="/__/firebase/10.8.1/firebase-storage-compat.js"></script>
+    <script defer src="/__/firebase/10.8.1/firebase-analytics-compat.js"></script>
+    <script defer src="/__/firebase/10.8.1/firebase-remote-config-compat.js"></script>
+    <script defer src="/__/firebase/10.8.1/firebase-performance-compat.js"></script>
+    <!--
+      initialize the SDK after all desired features are loaded, set useEmulator to false
+      to avoid connecting the SDK to running emulators.
+    -->
+    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    <link rel="manifest" href="site.webmanifest">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Sawarabi+Mincho&display=swap" rel="stylesheet">
+</head>
+<body>
+<h1 class="Corsiva fade-inD">パリヘイセイ <br class="sp">ご意見箱フォーム</h1>
+<form id="contact-form">
+    <input type="hidden" name="contact_number" value="697483">
+    <label>Discord name　*(匿名可)</label>
+    <input type="text" name="from_name">
+    <label>Email　*(返信用)*(任意)</label>
+    <input type="email" name="reply_to">
+    <label>Message</label>
+    <textarea name="message"></textarea>
+    <input type="submit" value="Send">
+    <div class="sns">
+        <a href="https://discord.com/channels/@me" target={"_blank"}>
+            <span><img src="discord-logo-1-1.png" alt="x"/></span>
+        </a> <a href="https://twitter.com/Paris_Heisei" target={"_blank"}>
+        <span><img src="TX.png" alt="x"/></span>
+    </a>
+        <a href="https://www.instagram.com/parisheisei/" target={"_blank"}>
+            <img src="IS.png" alt="instagram"/></a>
+    </div>
+</form>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        display: grid;
+        justify-content: center;
+        align-content: center;
+        min-height: 100vh;
+        background-color: rgba(255, 255, 255, 0.33);
+        background-image: url("repeated-square.webp");
+        font-family: "Sawarabi Mincho", serif;
+        font-weight: 400;
+        font-style: normal;
+        color: #484848;
+    }
+
+    h1 {
+
+    }
+
+    form {
+        margin: 0 auto;
+        padding: 0 0;
+        width: 90%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    form input, form textarea {
+        padding: 0.5rem 1rem;
+        margin: 0.5rem 0 1rem;
+        border-radius: 19px;
+        border: 2px solid #a4a4a4;
+        background-color: #efefef;
+        color: #484848;
+        font-size: 1.2rem;
+    }
+
+    form input:hover, form textarea:hover,
+    form input:focus, form textarea:focus,
+    form input:active, form textarea:active,
+    form input:checked, form textarea:checked {
+        border: 2px solid transparent;
+        outline: 2px solid #4600c0;
+    }
+
+    form textarea {
+        display: block;
+        height: 10rem;
+        flex-grow: 1;
+    }
+
+    input[type="submit"] {
+        margin: 1rem 10%;
+        width: 80%;
+        transition: 0.1s;
+    }
+
+    input[type="submit"]:hover {
+        filter: invert(1)
+    }
+
+    .sns {
+        margin-top: 3rem;
+        display: flex;
+        justify-content: center;
+    }
+
+    .sns img {
+        height: 40px;
+        padding: 0.5rem 1rem;
+        transition: 0.4s;
+        border-radius: 50%;
+        animation: 0.5s fade_in_left forwards;
+    }
+
+    @media screen and (min-width: 501px) {
+        h1 {
+            width: 60vw;
+        }
+
+        .sp {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width: 500px) {
+        h1 {
+            width: 95vw;
+        }
+        form {
+            width: 95%;
+        }
+    }
+
+</style>
+</body>
+</html>
